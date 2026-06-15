@@ -12,12 +12,16 @@ const app = express();
 
 /* MongoDB Connection */
 
-mongoose.connect(
-"mongodb+srv://atchaya:atchaya123@cluster0.ipnkjaq.mongodb.net/studentdb?retryWrites=true&w=majority"
-)
+mongoose.set('strictQuery', false);
 
+mongoose.connect(
+"mongodb://atchaya:atchaya123@ac-niwuyjh-shard-00-00.ipnkjaq.mongodb.net:27017,ac-niwuyjh-shard-00-01.ipnkjaq.mongodb.net:27017,ac-niwuyjh-shard-00-02.ipnkjaq.mongodb.net:27017/studentdb?ssl=true&replicaSet=atlas-pelsiz-shard-0&authSource=admin&appName=Cluster0"
+)
 .then(()=>{
     console.log("MongoDB Connected");
+})
+.catch((err)=>{
+    console.log(err);
 });
 
 /* EJS Setup */
