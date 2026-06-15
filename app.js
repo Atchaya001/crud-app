@@ -13,7 +13,7 @@ const app = express();
 /* MongoDB Connection */
 
 mongoose.connect(
-"mongodb+srv://atchaya:<db_atchaya123>@cluster0.ipnkjaq.mongodb.net/?appName=Cluster0"
+"mongodb+srv://atchaya:atchaya123@cluster0.ipnkjaq.mongodb.net/studentdb?retryWrites=true&w=majority"
 )
 
 .then(()=>{
